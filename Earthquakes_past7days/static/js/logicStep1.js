@@ -18,7 +18,7 @@ attribution: 'Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap
 // Create a base layer that holds both maps.
 let baseMaps = {
   "Streets": streets,
-  "Satellite Streets": satelliteStreets
+  "Satellite": satelliteStreets
 };
 
 // Create the map object with center, zoom level and default layer.
@@ -43,6 +43,23 @@ d3.json(torontoHoods).then(function(data) {
 
 // Then we add our 'graymap' tile layer to the map.
 streets.addTo(map);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // // Accessing the airport GeoJSON URL
 // let airportData = "https://raw.githubusercontent.com/crkaide/Mapping_Earthquakes/Mapping_GeoJSON_Points/Mapping_GeoJSON_Points/static/js/majorAirports.json";
