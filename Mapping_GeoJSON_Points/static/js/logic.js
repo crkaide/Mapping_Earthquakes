@@ -9,8 +9,11 @@ console.log("working");
 // // Create the map object with center at the San Francisco airport.
 // let map = L.map('mapid').setView([37.6213, -122.3790], 5);
 
-// Create the map object with center at the San Francisco airport.
-let map = L.map('mapid').setView([37.5, -122.5], 10);
+// // Create the map object with center at the San Francisco airport.
+// let map = L.map('mapid').setView([37.5, -122.5], 10);
+
+// Create the map object with center and zoom level.
+let map = L.map('mapid').setView([30, 30], 2);
 
 // Add GeoJSON data.
 let sanFranAirport =
@@ -92,6 +95,9 @@ attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStree
     maxZoom: 18,
     accessToken: API_KEY
 });
+
+// Accessing the airport GeoJSON URL
+let airportData = "https://raw.githubusercontent.com/crkaide/Mapping_Earthquakes/Mapping_GeoJSON_Points/Mapping_GeoJSON_Points/static/js/majorAirports.json";
 
 // let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token={accessToken}', {
 //     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
