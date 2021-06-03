@@ -134,14 +134,25 @@ streets.addTo(map);
 
 let torontoRoutes = "https://raw.githubusercontent.com/crkaide/Mapping_Earthquakes/Mapping_GeoJSON_Linestrings/Mapping_GeoJSON_Linestrings/static/js/torontoRoutes.json";
 
+// Create a style for the lines.
+let myStyle = {
+  color: "#ffffa1",
+  weight: 2
+}
+
 // Grabbing our GeoJSON data.
 d3.json(torontoRoutes).then(function(data) {
-    console.log(data);
+  console.log(data);
   // Creating a GeoJSON layer with the retrieved data.
-  L.geoJson(data).addTo(map);
+L.geoJson(data, {
+  style: myStyle,
+  onEachFeature: function(feature, layer) {
+    layer.bindPopup("<h3> Airline: " + feature.properties.airline + "<h3> <hr><h3> Destination: "
+    + feature.properties.dst + "</h3");
+  }
+})
+.addTo(map);
 });
-
-
 
 // let streets = L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token={accessToken}', {
 //     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
