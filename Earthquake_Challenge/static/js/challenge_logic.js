@@ -147,7 +147,7 @@ legend.onAdd = function() {
   d3.json(tectonicLink).then(function (dataTecton) {
 
   L.geoJson(dataTecton, {
-      color: "orange",
+      color: "indigo",
       weight: 2,
       pointToLayer: function (dataTecton, latlng) {
         return L.LineString(latlng);
