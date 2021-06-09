@@ -89,7 +89,6 @@ d3.json(earthquake_link).then(function (data) {
     }
     // Creating a GeoJSON layer with the retrieved data.
     L.geoJson(data, {
-
         // We turn each feature into a circleMarker on the map.  
         pointToLayer: function (feature, latlng) {
             console.log(data);
@@ -97,7 +96,6 @@ d3.json(earthquake_link).then(function (data) {
         },
         // We set the style for each circleMarker using our styleInfo function.
         style: styleInfo,
-        
         // We create a popup for each circleMarker to display the magnitude and
         //  location of the earthquake after the marker has been created and styled.
         onEachFeature: function (feature, layer) {
@@ -105,26 +103,38 @@ d3.json(earthquake_link).then(function (data) {
         }
     }).addTo(earthquakes);
 
-    var legend = L.control({position: 'bottomright'});
+    // Then we add the earthquake layer to our map.
+    earthquakes.addTo(map);
 
-    legend.onAdd = function (map) {
+    // Create a legend control object:
+    let legend = L.control({ position: 'bottomright' });
 
-        var div = L.DomUtil.create('div', 'info legend'),
-            grades = [0, 10, 20, 50, 100, 200, 500, 1000],
-            labels = [];
+    legend.onAdd = function () {
+        let div = L.DomUtil.create('div', 'info legend');
+        const magnitudes = [0, 1, 2, 3, 4, 5];
+        const colors = [
+            "#98ee00",
+            "#d4ee00",
+            "#eecc00",
+            "#ee9c00",
+            "#ea822c",
+            "#ea2c2c"
+        ];
 
-        // loop through our density intervals and generate a label with a colored square for each interval
-        for (var i = 0; i < grades.length; i++) {
+        // Looping through our intervals to generate a label with a colored square for each interval.
+        for (var i = 0; i < magnitudes.length; i++) {
+            console.log(colors[i]);
             div.innerHTML +=
-                '<i style="background:' + getColor(grades[i] + 1) + '"></i> ' +
-                grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + '<br>' : '+');
+                "<i style='background: " + colors[i] + "'></i> " +
+                magnitudes[i] + (magnitudes[i + 1] ? "&ndash;" + magnitudes[i + 1] + "<br>" : "+");
         }
-
         return div;
     };
 
     legend.addTo(map);
 
-    // Then we add the earthquake layer to our map.
-    earthquakes.addTo(map);
 });
+
+{/* <div class="info legend">
+    <i>
+</div> */}
