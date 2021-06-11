@@ -6,6 +6,8 @@ As part of my new position as a data visualization specialist for the Disaster R
 ## Purpose
 Pulling real-time earthquake data for the prior seven days, this map visualizes the location and magnitude of earthquakes worldwide, including their geographic relationship to tectonic fault lines.  The DNR hopes that this will become a go-to resource and raise its public and professional profile.
 
+!(tec_major.png)[https://github.com/crkaide/Mapping_Earthquakes/blob/main/images/tec_major.png?raw=true]
+
 ## How it works
 1. User interaction triggers an API call to the USGS website for GeoJSON data (e.g., coordinates/magnitudes of earthqukes in the past seven days), using JS and the D3 library
 2. Leaflet plots the data
@@ -14,3 +16,5 @@ Pulling real-time earthquake data for the prior seven days, this map visualizes 
 ## User interactivity/features
 1. Map styles: streets, satellight, night navigation
 2. Overlays: Earthquakes, Tectonic, Major Earthquakes
+
+!(user_features.png)[https://github.com/crkaide/Mapping_Earthquakes/blob/main/images/user_features.png?raw=true]
