@@ -1,5 +1,6 @@
 # Ignore the config.js file.
 config.js
+.DS_Store
 *.DS_Store
 
 # Compiled class file
