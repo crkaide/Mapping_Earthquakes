@@ -12,5 +12,5 @@ Pulling real-time earthquake data for the prior seven days, this map visualizes 
 3. Mapbox uses specifications made by Leaflet to generate an interactive world map
 
 ## User interactivity/features
--Map styles: streets, satellight, night navigation
--Overlays: Earthquakes, Tectonic, Major Earthquakes
+1. Map styles: streets, satellight, night navigation
+2. Overlays: Earthquakes, Tectonic, Major Earthquakes
