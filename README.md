@@ -15,6 +15,6 @@ Pulling real-time earthquake data for the prior seven days, this map visualizes 
 
 ## User interactivity/features
 1. Map styles: streets, satellite, night navigation
-2. Overlays: Earthquakes, Tectonic, Major Earthquakes
+2. Overlays: earthquakes, tectonic, major earthquakes
 
 ![user_features.png](https://github.com/crkaide/Mapping_Earthquakes/blob/main/images/user_features.png?raw=true)
